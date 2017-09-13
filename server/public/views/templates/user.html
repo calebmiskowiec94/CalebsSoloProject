@@ -3,4 +3,268 @@
 
     <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
+    <h4>{{uc.dates.list[0]}}</h4>
+<br><br><br>
+
+<section class="container">
+    
+
+    <h1>VeganCalendar</h1>
+    <h3>Week of 9/11 - 9/18</h3>
+
+
+     <div ng-repeat="day in uc.dates.list" ng-include="'/views/partials/menu-calendar-day.html'"></div> 
+     <!-- <div  ng-include="'/views/partials/menu-calendar-day.html'"></div>  -->
+
+
+<!-- <div class="ac">
+
+    <input class="ac-input" id="ac-5" name="ac-5" type="checkbox" />
+    <label class="ac-label" for="ac-5">Tuesday September 12th 2017</label>
+
+    <article class="ac-text">
+
+        <div class="ac-sub">
+            <input class="ac-input" id="ac-6" name="ac-6" type="checkbox" />
+            <label class="ac-label" for="ac-6">Breakfast</label>
+            <article class="ac-sub-text">
+                <p>Tofu Scramble</p>
+                <p>2 Oranges</p>
+                <p>Toast</p>
+            </article>
+        </div>
+
+        <div class="ac-sub">
+            <input class="ac-input" id="ac-7" name="ac-7" type="checkbox" />
+            <label class="ac-label" for="ac-7">Lunch</label>
+            <article class="ac-sub-text">
+                <p>Tofu Spinach Quinoa Salad</p>
+
+                <p>2 Bananas</p>
+                <p>Nuts</p>
+            </article>
+        </div>
+
+        <div class="ac-sub">
+            <input class="ac-input" id="ac-8" name="ac-8" type="checkbox" />
+            <label class="ac-label" for="ac-8">Dinner</label>
+            <article class="ac-sub-text">
+                <p>Fallafel With Hummus</p>
+                <p>2 Bananas</p>
+                <p>Nuts</p>
+            </article>
+        </div>
+
+
+    </article>
+
+
+    <div class="ac">
+
+        <input class="ac-input" id="ac-9" name="ac-9" type="checkbox" />
+        <label class="ac-label" for="ac-9">Wednesday September 12th 2017</label>
+
+        <article class="ac-text">
+
+            <div class="ac-sub">
+                <input class="ac-input" id="ac-10" name="ac-10" type="checkbox" />
+                <label class="ac-label" for="ac-10">Breakfast</label>
+                <article class="ac-sub-text">
+                    <p>Tofu Scramble</p>
+                    <p>2 Oranges</p>
+                    <p>Toast</p>
+                </article>
+            </div>
+
+            <div class="ac-sub">
+                <input class="ac-input" id="ac-11" name="ac-11" type="checkbox" />
+                <label class="ac-label" for="ac-11">Lunch</label>
+                <article class="ac-sub-text">
+                    <p>Tofu Spinach Quinoa Salad</p>
+
+                    <p>2 Bananas</p>
+                    <p>Nuts</p>
+                </article>
+            </div>
+
+            <div class="ac-sub">
+                <input class="ac-input" id="ac-12" name="ac-12" type="checkbox" />
+                <label class="ac-label" for="ac-12">Dinner</label>
+                <article class="ac-sub-text">
+                    <p>Fallafel With Hummus</p>
+                    <p>2 Bananas</p>
+                    <p>Nuts</p>
+                </article>
+            </div>
+
+
+        </article>
+        <div class="ac">
+
+            <input class="ac-input" id="ac-13" name="ac-13" type="checkbox" />
+            <label class="ac-label" for="ac-13">Thursday September 12th 2017</label>
+
+            <article class="ac-text">
+
+                <div class="ac-sub">
+                    <input class="ac-input" id="ac-14" name="ac-14" type="checkbox" />
+                    <label class="ac-label" for="ac-14">Breakfast</label>
+                    <article class="ac-sub-text">
+                        <p>Tofu Scramble</p>
+                        <p>2 Oranges</p>
+                        <p>Toast</p>
+                    </article>
+                </div>
+
+                <div class="ac-sub">
+                    <input class="ac-input" id="ac-15" name="ac-15" type="checkbox" />
+                    <label class="ac-label" for="ac-15">Lunch</label>
+                    <article class="ac-sub-text">
+                        <p>Tofu Spinach Quinoa Salad</p>
+
+                        <p>2 Bananas</p>
+                        <p>Nuts</p>
+                    </article>
+                </div>
+
+                <div class="ac-sub">
+                    <input class="ac-input" id="ac-16" name="ac-16" type="checkbox" />
+                    <label class="ac-label" for="ac-16">Dinner</label>
+                    <article class="ac-sub-text">
+                        <p>Fallafel With Hummus</p>
+                        <p>2 Bananas</p>
+                        <p>Nuts</p>
+                    </article>
+                </div>
+
+
+            </article><div class="ac">
+
+                <input class="ac-input" id="ac-17" name="ac-17" type="checkbox" />
+                <label class="ac-label" for="ac-17">friday September 12th 2017</label>
+
+                <article class="ac-text">
+
+                    <div class="ac-sub">
+                        <input class="ac-input" id="ac-18" name="ac-18" type="checkbox" />
+                        <label class="ac-label" for="ac-18">Breakfast</label>
+                        <article class="ac-sub-text">
+                            <p>Tofu Scramble</p>
+                            <p>2 Oranges</p>
+                            <p>Toast</p>
+                        </article>
+                    </div>
+
+                    <div class="ac-sub">
+                        <input class="ac-input" id="ac-19" name="ac-19" type="checkbox" />
+                        <label class="ac-label" for="ac-19">Lunch</label>
+                        <article class="ac-sub-text">
+                            <p>Tofu Spinach Quinoa Salad</p>
+
+                            <p>2 Bananas</p>
+                            <p>Nuts</p>
+                        </article>
+                    </div>
+
+                    <div class="ac-sub">
+                        <input class="ac-input" id="ac-20" name="ac-20" type="checkbox" />
+                        <label class="ac-label" for="ac-20">Dinner</label>
+                        <article class="ac-sub-text">
+                            <p>Fallafel With Hummus</p>
+                            <p>2 Bananas</p>
+                            <p>Nuts</p>
+                        </article>
+                    </div>
+
+
+                </article>
+
+                <div class="ac">
+
+                    <input class="ac-input" id="ac-21" name="ac-21" type="checkbox" />
+                    <label class="ac-label" for="ac-21">Saturday September 12th 2017</label>
+
+                    <article class="ac-text">
+
+                        <div class="ac-sub">
+                            <input class="ac-input" id="ac-22" name="ac-22" type="checkbox" />
+                            <label class="ac-label" for="ac-22">Breakfast</label>
+                            <article class="ac-sub-text">
+                                <p>Tofu Scramble</p>
+                                <p>2 Oranges</p>
+                                <p>Toast</p>
+                            </article>
+                        </div>
+
+                        <div class="ac-sub">
+                            <input class="ac-input" id="ac-23" name="ac-23" type="checkbox" />
+                            <label class="ac-label" for="ac-23">Lunch</label>
+                            <article class="ac-sub-text">
+                                <p>Tofu Spinach Quinoa Salad</p>
+
+                                <p>2 Bananas</p>
+                                <p>Nuts</p>
+                            </article>
+                        </div>
+
+                        <div class="ac-sub">
+                            <input class="ac-input" id="ac-24" name="ac-24" type="checkbox" />
+                            <label class="ac-label" for="ac-24">Dinner</label>
+                            <article class="ac-sub-text">
+                                <p>Fallafel With Hummus</p>
+                                <p>2 Bananas</p>
+                                <p>Nuts</p>
+                            </article>
+                        </div>
+
+
+                    </article>
+                    <div class="ac">
+
+                        <input class="ac-input" id="ac-25" name="ac-25" type="checkbox" />
+                        <label class="ac-label" for="ac-25">Sunday September 12th 2017</label>
+
+                        <article class="ac-text">
+
+                            <div class="ac-sub">
+                                <input class="ac-input" id="ac-26" name="ac-26" type="checkbox" />
+                                <label class="ac-label" for="ac-26">Breakfast</label>
+                                <article class="ac-sub-text">
+                                    <p>Tofu Scramble</p>
+                                    <p>2 Oranges</p>
+                                    <p>Toast</p>
+                                </article>
+                            </div>
+
+                            <div class="ac-sub">
+                                <input class="ac-input" id="ac-27" name="ac-27" type="checkbox" />
+                                <label class="ac-label" for="ac-27">Lunch</label>
+                                <article class="ac-sub-text">
+                                    <p>Tofu Spinach Quinoa Salad</p>
+
+                                    <p>2 Bananas</p>
+                                    <p>Nuts</p>
+                                </article>
+                            </div>
+
+                            <div class="ac-sub">
+                                <input class="ac-input" id="ac-28" name="ac-28" type="checkbox" />
+                                <label class="ac-label" for="ac-28">Dinner</label>
+                                <article class="ac-sub-text">
+                                    <p>Fallafel With Hummus</p>
+                                    <p>2 Bananas</p>
+                                    <p>Nuts</p>
+                                </article>
+                            </div>
+
+
+                        </article>
+
+</section> -->
+
+
+
+
+
+
 </div>

@@ -16,6 +16,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     .when('/user', {
       templateUrl: '/views/templates/user.html',
       controller: 'UserController as uc',
+      // controller:'CalendarController as cc',
       resolve: {
         getuser : function(UserService){
           return UserService.getuser();
