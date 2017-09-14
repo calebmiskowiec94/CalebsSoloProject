@@ -1,15 +1,16 @@
 <div class="ac">
 
-    <input class="ac-input" id="ac-1" name="ac-1" type="checkbox" />
-    <label class="ac-label" for="ac-1">Monday September 11th 2017</label>
+     <input class="ac-input" id="ac-1" name="ac-1" type="checkbox" /> 
+    <!-- <label ng-repeat="day in uc.dates.list" class="ac-label" for="ac-1">{{day.date}}</label> -->
+    <label class="ac-label" for="ac-1">{{day.date}}</label>
 
     <article class="ac-text">
 
-        <div ng-include="'/views/partials/menu-calendar-meal.html'"></div>
+          <div ng-include="'/views/partials/menu-calendar-meal.html'"></div> 
 
         <div ng-include="'/views/partials/menu-calendar-meal.html'"></div>
 
-        <div ng-include="'/views/partials/menu-calendar-meal.html'"></div>
+        <div ng-include="'/views/partials/menu-calendar-meal.html'"></div>   
 
         <!-- <div class="ac-sub">
                 <input class="ac-input" id="ac-3" name="ac-3" type="checkbox" />
@@ -18,13 +19,13 @@
                     <p>Tofu Scramble<button>EDIT</button><button>Delete</button></p>
                     <p>2 Oranges<button>EDIT</button><button>Delete</button></p>
                     <p>Toast<button>EDIT</button><button>Delete</button></p>
-                </article>
+                </article>a
             </div>
 
                 <div class="ac-sub">
                     <input class="ac-input" id="ac-4" name="ac-4" type="checkbox" />
                     <label class="ac-label" for="ac-4">Dinner</label>
-                    <article class="ac-sub-text">
+                    <article class="ac-sub-text">      
                         <p>Tofu Scramble<button>EDIT</button><button>Delete</button></p>
                         <p>2 Oranges<button>EDIT</button><button>Delete</button></p>
                         <p>Toast<button>EDIT</button><button>Delete</button></p>

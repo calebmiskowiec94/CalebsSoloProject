@@ -1,0 +1,32 @@
+for id ac-1, the checkbox
+when ngclick have it open the one corresponding to unique id from dates collection
+each day will have its own id
+
+the id ac-1 will probably have to be set to the id from the dates too
+
+
+will need to set up .when
+first for the days monday-sunday
+which will be like /id 
+and another for the meals, breakfast lunch dinner
+which will be like /id/id+1 /id/id+2 and /id/id+3
+
+
+will need to use 'this' selector so it knows for the thing i clicked on
+
+
+
+somehow the id needs to increment in the ng repeat so the days are not static to monday
+
+need to create a function for ng-click that when clicked sets....tbc
+
+
+
+
+
+for the Add button
+ng click call function
+
+need an input 
+need make a variable equal to inputs text
+function will add input text to database

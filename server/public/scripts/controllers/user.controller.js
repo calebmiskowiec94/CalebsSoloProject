@@ -1,4 +1,4 @@
-myApp.controller('UserController', ['UserService', 'CalendarService', function(UserService,CalendarService) {
+myApp.controller('UserController', ['UserService', 'CalendarService','BreakfastService', function(UserService,CalendarService,BreakfastService) {
   console.log('UserController created');
   var vm = this;
   vm.userService = UserService;
@@ -8,4 +8,19 @@ myApp.controller('UserController', ['UserService', 'CalendarService', function(U
   //vm.userObject = UserService.userObject;
   // vm.calendarService = CalendarService;
   vm.dates = CalendarService.dates;
+  vm.meals = BreakfastService.breakfast;
+  vm.newMeal = {};
+  BreakfastService.getBreakfast();
+  vm.gottenBreakfast = BreakfastService.gottenBreakfast;
+  console.log("new meal is ",vm.newMeal);
+  console.log('self is',self)
+     
+
+
+  vm.addMeal = function () {
+    // have service send this to the server
+    console.log('clicked to add new meal');
+    BreakfastService.addMeal(vm.newMeal);
+  }
+
 }]);

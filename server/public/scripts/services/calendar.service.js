@@ -1,6 +1,7 @@
 myApp.service('CalendarService', ['$http', function ($http) {
     var self = this;
     self.dates={list:[]};
+    
 
     self.getDate = function () {
         $http({
@@ -12,7 +13,12 @@ myApp.service('CalendarService', ['$http', function ($http) {
         });
     };
 
+
 self.getDate();
+
+
+
+
 }]);
 
 
