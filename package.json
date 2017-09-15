@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/calebmiskowiec94/CalebsSoloProject/issues"
   },
-  "homepage": "https://github.com/calebmiskowiec94/CalebsSoloProject#readme"
+  "homepage": "https://github.com/calebmiskowiec94/CalebsSoloProject#readme",
+  "devDependencies": {}
 }

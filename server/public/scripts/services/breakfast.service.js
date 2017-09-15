@@ -19,6 +19,22 @@ myApp.service('BreakfastService', ['$http', function ($http) {
         });
     };
     // self.addBreakfastToDb();
+    self.updateBreakfastFood = function (currentBreakfastFood) {
+        console.log('service is going to send this update to the server: ', currentBreakfastFood);
+        $http.put('/breakfast/' + currentBreakfastFood._id, currentBreakfastFood).then(function (response) {
+            console.log('service update response:', response);
+            self.getBreakfast();
+        });
+    };
+    self.deleteBreakfastFood = function (breakfastFoodId) {
+        console.log('service to delete id: ', breakfastFoodId);
+
+        $http.delete('/breakfast/' + breakfastFoodId).then(function (response) {
+            console.log('service delete response:', response);
+            self.getBreakfast();
+        });
+
+    }
 
 
 }]);

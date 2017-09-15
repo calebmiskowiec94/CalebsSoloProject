@@ -13,7 +13,7 @@ myApp.controller('UserController', ['UserService', 'CalendarService','BreakfastS
   BreakfastService.getBreakfast();
   vm.gottenBreakfast = BreakfastService.gottenBreakfast;
   console.log("new meal is ",vm.newMeal);
-  console.log('self is',self)
+  console.log('self is',vm)
      
 
 
@@ -22,5 +22,16 @@ myApp.controller('UserController', ['UserService', 'CalendarService','BreakfastS
     console.log('clicked to add new meal');
     BreakfastService.addMeal(vm.newMeal);
   }
+
+  vm.updateBreakfastFood = function (currentBreakfastFood) {
+    console.log('hitttt it');
+    currentBreakfastFood.breakfastfood = '';
+    BreakfastService.updateBreakfastFood(currentBreakfastFood);
+  }
+  vm.deleteBreakfastFood = function (breakfastFoodId) {
+    console.log('it hit  itttt');
+    BreakfastService.deleteBreakfastFood(breakfastFoodId);
+  }
+
 
 }]);

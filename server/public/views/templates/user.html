@@ -4,22 +4,22 @@
     <h1 id="welcome" class="lead">Welcome, {{uc.userObject.userName}}!</h1>
     <button class="btn btn-default" ng-click="uc.userService.logout()">Log Out</button>
     <!-- <h4>{{uc.dates.list[0]}}</h4> -->
-<br><br><br>
+    <br><br><br>
 
-<section class="container">
-    
-
-    <h1>VeganCalendar</h1>
-    <h3>Week of 9/11 - 9/18</h3>
+    <section class="container">
 
 
-       <div ng-repeat="day in uc.dates.list" ng-include="'/views/partials/menu-calendar-day.html'"></div>    
+        <h1>VeganCalendar</h1>
+        <h3>Week of 9/11 - 9/18</h3>
 
 
-      <div  ng-include="'/views/partials/menu-calendar-day.html'"></div>  
+        <div ng-repeat="day in uc.dates.list" ng-include="'/views/partials/menu-calendar-day.html'"></div>
 
 
-<!-- <div class="ac">
+        <!-- <div ng-include="'/views/partials/menu-calendar-day.html'"></div> -->
+
+
+        <!-- <div class="ac">
 
     <input class="ac-input" id="ac-5" name="ac-5" type="checkbox" />
     <label class="ac-label" for="ac-5">Tuesday September 12th 2017</label>

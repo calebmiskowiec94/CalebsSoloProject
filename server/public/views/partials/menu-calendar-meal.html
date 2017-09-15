@@ -1,15 +1,29 @@
 <div class="ac-sub">
-    <input class="ac-input" id="ac-2" name="ac-2" type="checkbox" />
-    <label class="ac-label" for="ac-2">Breakfast</label>
+    <input class="ac-input" id="ac-{{day._id}}+1" name="ac-{{day._id}}+1" type="checkbox" />
+    <label class="ac-label" for="ac-{{day._id}}+1">Breakfast</label>
     <article class="ac-sub-text">
          <div > 
-              <p ng-repeat="meal in uc.meals.list">{{meal.breakfastfood}}<button>edit</button><button>delete</button></p>   
-           <!-- <p>Tofu Scramble <button>EDIT</button> <button>Delete</button></p>
+             
+              <form>
+                  <div ng-repeat="meal in uc.meals.list" style="padding: 5px 5px 5px 5px;">
+                      {{meal.breakfastfood}}
+                      <button ng-click="editInput = ! editInput" class="btn btn-default">
+                          Edit
+                        </button>
+                        <input value="{{meal.breakfastfood}}" ng-model="uc.newMeal.breakfastfood" ng-show="editInput" type="text" placeholder="">
+                        <button ng-click="uc.updateBreakfastFood(meal)" ng-show="editInput" class="wow">
+                            Submit
+                        </button>
+                   <button ng-click="uc.deleteBreakfastFood(meal._id)">Delete</button>
+                   </div>
+                </form>
+        <!-- <input ng-show="editInput" type="text" placeholder="edit"> -->
+         <!-- "vm.updateBreakFastFood(currentBreakfastFood)" -->
+              <!-- <p>Tofu Scramble <button>EDIT</button> <button>Delete</button></p>
         <p>2 Oranges <button>EDIT</button> <button>Delete</button></p>
         <p>Toast <button>EDIT</button> <button>Delete</button></p> -->
 
         <p><input ng-model="uc.newMeal.breakfastfood" id="breakfastInput" type="text" placeholder="Whats For Breakfast?" /><button class="btn btn-primary" ng-click="uc.addMeal()">ADD!</button></p>
-
            </div>   
 </article>
 </div> 

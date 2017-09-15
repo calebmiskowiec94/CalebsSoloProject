@@ -43,7 +43,7 @@ router.put('/:id', function (req, res) {
     console.log('new food:', req.body.breakfastfood);
     Breakfast.findByIdAndUpdate(
         { _id: breakfastfoodId },
-        { $set: { location: req.body.location } },
+        { $set: { breakfastfood: req.body.breakfastfood } },
         function (err, data) {
             if (err) {
                 console.log('update error: ', err);
@@ -54,6 +54,20 @@ router.put('/:id', function (req, res) {
             }
         }
     )
+});
+router.delete('/:id', function (req, res) {
+    Breakfast.findByIdAndRemove(
+        { _id: req.params.id },
+        function (err, data) {
+            if (err) {
+                console.log('delete error: ', err);
+
+                res.sendStatus(500);
+            } else {
+                res.sendStatus(200);
+            }
+        }
+    );
 });
 
 module.exports = router;
