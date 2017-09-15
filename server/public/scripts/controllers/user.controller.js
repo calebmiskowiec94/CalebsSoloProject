@@ -24,8 +24,9 @@ myApp.controller('UserController', ['UserService', 'CalendarService','BreakfastS
   }
 
   vm.updateBreakfastFood = function (currentBreakfastFood) {
-    console.log('hitttt it');
-    currentBreakfastFood.breakfastfood = '';
+    console.log('hitttt it', "id is ", currentBreakfastFood);
+
+    // currentBreakfastFood.breakfastfood = '';
     BreakfastService.updateBreakfastFood(currentBreakfastFood);
   }
   vm.deleteBreakfastFood = function (breakfastFoodId) {

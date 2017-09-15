@@ -10,7 +10,7 @@
                       <button ng-click="editInput = ! editInput" class="btn btn-default">
                           Edit
                         </button>
-                        <input value="{{meal.breakfastfood}}" ng-model="uc.newMeal.breakfastfood" ng-show="editInput" type="text" placeholder="">
+                        <input ng-model="meal.breakfastfood" ng-show="editInput" type="text" placeholder="edit">
                         <button ng-click="uc.updateBreakfastFood(meal)" ng-show="editInput" class="wow">
                             Submit
                         </button>
