@@ -14,6 +14,7 @@ var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
 var calendarRouter = require('./routes/calendar.router');
  var breakfastRouter = require('./routes/breakfast.router');
+ var foodtypeRouter = require('./routes/foodtype.router');
 
 var port = process.env.PORT || 5000;
 
@@ -36,6 +37,7 @@ app.use('/register', registerRouter);
 app.use('/user', userRouter);
 app.use('/calendar', calendarRouter);
 app.use('/breakfast', breakfastRouter);
+app.use('/foodtype', foodtypeRouter);
 
 
 // Catch all bucket, must be last!
