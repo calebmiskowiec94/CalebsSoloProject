@@ -4,9 +4,16 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 // Mongoose Schema
+var DayofweekSchema = new Schema({
+    dayofweek: { type: String, required: false},
+    breakfast:[],
+    lunch:[],
+    dinner:[],
+});
 var UserSchema = new Schema({
     username: {type: String, required: true, index: {unique: true}},
-    password: {type: String, required: true}
+    password: {type: String, required: true},
+    days: [DayofweekSchema]
 });
 
 // Called before adding a new user to the DB. Encrypts password.

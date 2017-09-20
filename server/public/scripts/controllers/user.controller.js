@@ -1,7 +1,6 @@
 myApp.controller('UserController', ['UserService', 'CalendarService','BreakfastService','FoodtypeService', function(UserService,CalendarService,BreakfastService,FoodtypeService) {
   console.log('UserController created');
   var vm = this;
-  vm.userService = UserService;
   vm.userObject = UserService.userObject;
   //CalendarService.getCalendar();
   //vm.userService = UserService;

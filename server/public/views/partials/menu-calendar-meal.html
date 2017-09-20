@@ -1,12 +1,12 @@
 <div ng-repeat="foodtype in uc.foodtypes.list">
 <div class="ac-sub">
-     <input class="ac-input" id="ac-{{foodtype._id}}+1" name="ac-{{foodtype._id}}+1" type="checkbox" />
-    <label class="ac-label" for="ac-{{foodtype._id}}+1">{{foodtype.foodtype}}</label> 
+     <input class="ac-input" id="ac-{{foodtype._id}}+{{day._id}}" name="ac-{{foodtype._id}}+{{day._id}}" type="checkbox" />
+    <label class="ac-label" for="ac-{{foodtype._id}}+{{day._id}}">{{foodtype.foodtype}}</label>
     <article class="ac-sub-text">
         <div>
 
             <form>
-                <div ng-repeat="meal in uc.meals.list" style="padding: 5px 5px 5px 5px;">
+                <div id="ac-{{foodtype._id}}+{{day._id}}" ng-repeat="meal in uc.meals.list" style="padding: 5px 5px 5px 5px;">
                     {{meal.breakfastfood}}
                     <button ng-click="editInput = ! editInput" class="btn btn-default">
                           Edit
