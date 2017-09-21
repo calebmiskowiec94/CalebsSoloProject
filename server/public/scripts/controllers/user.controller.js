@@ -37,6 +37,9 @@ myApp.controller('UserController', ['UserService', 'CalendarService','UserfoodSe
     console.log('it hit  itttt');
     BreakfastService.deleteBreakfastFood(breakfastFoodId);
   }
+  vm.saveUserDays = function (userDays){
+console.log(userDays);
+  }
 
 
 }]);
