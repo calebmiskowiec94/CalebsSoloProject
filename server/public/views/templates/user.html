@@ -3,10 +3,16 @@
 
     <p id="welcome" class="lead">Welcome, {{uc.userObject.details.username}}!</p>
 
+    {{uc.userObject.details}}
+
     <div ng-repeat="day in uc.userObject.details.days">{{day.dayofweek}}
         breakfast
         <ul>
             <li ng-repeat="food in day.breakfast">{{food}}</li>
+            <li><input ng-model="userfood" id="Input" type="text" placeholder="Whats For {{foodtype.foodtype}}?" /><button class="btn btn-primary"
+                ng-click="day.breakfast.push(userfood)">ADD!</button></li>
+            <!-- changed day to food  -->
+
       
         </ul>
         lunch
@@ -22,3 +28,4 @@
     </div>
 
 </div>
+<p></p>

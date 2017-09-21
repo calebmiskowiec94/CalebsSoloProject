@@ -18,7 +18,7 @@ myApp.service('BreakfastService', ['$http', function ($http) {
             self.getBreakfast();
         });
     };
-    // self.addBreakfastToDb();
+ 
     self.updateBreakfastFood = function (currentBreakfastFood) {
         console.log('service is going to send this update to the server: ', currentBreakfastFood);
         $http.put('/breakfast/' + currentBreakfastFood._id, currentBreakfastFood).then(function (response) {

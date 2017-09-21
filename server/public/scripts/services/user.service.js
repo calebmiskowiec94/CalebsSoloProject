@@ -32,6 +32,17 @@ myApp.factory('UserService', function($http, $location){
       });
     }
   };
+  var self = this
+  getUser();
+  self.addfood = function (User//Food
+  ) {
+    console.log('going to send this object to the server: ', User);
+
+    $http.post('/user', User).then(function (response) {
+      console.log('service post response: ', response);
+      getUser();
+    });
+  };
   
 
 });//

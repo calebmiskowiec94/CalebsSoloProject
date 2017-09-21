@@ -4,17 +4,37 @@ var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
 
 // Mongoose Schema
-var DayofweekSchema = new Schema({
-    dayofweek: { type: String, required: false},
-    breakfast:[],
-    lunch:[],
-    dinner:[],
-});
+// var DayofweekSchema = new Schema({
+//     dayofweek: { type: String, required: false},
+//     breakfast:[String],
+//     lunch:[],
+//     dinner:[],
+// });
+// var UserSchema = new Schema({
+//     username: {type: String, required: true, index: {unique: true}},
+//     password: {type: String, required: true},
+//     days: [DayofweekSchema]
+// });
+
 var UserSchema = new Schema({
-    username: {type: String, required: true, index: {unique: true}},
-    password: {type: String, required: true},
-    days: [DayofweekSchema]
+    username: { type: String, required: true, index: { unique: true } },
+    password: { type: String, required: true },
+    days: [
+        // { dayofweek: { type: String, required: false, 
+        //     breakfast:[String],
+        //     lunch:[String],
+        //     dinner:[String],},}
+    ]
 });
+
+
+
+
+// var UserSchema = new Schema({
+//     username: { type: String, required: true, index: { unique: true } },
+//     password: { type: String, required: true },
+//     days: []
+// });
 
 // Called before adding a new user to the DB. Encrypts password.
 UserSchema.pre('save', function(next) {

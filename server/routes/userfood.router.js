@@ -1,13 +1,14 @@
 var express = require('express');
 var router = express.Router();
-var Breakfast = require('../models/breakfast.js');
+var User = require('../models/user.js');
+var path = require('path');
 
 // Handles Ajax request for user information if user is authenticated
 router.get('/', function (req, res) {
     console.log('get /breakfast route');
     // check if logged in
 
-    Breakfast.find({}, function (err, data) {
+    User.find({}, function (err, data) {
         if (err) {
             console.log('find error: ', err);
             res.sendStatus(500);
@@ -18,24 +19,34 @@ router.get('/', function (req, res) {
     });
 });
 
-router.post('/', function (req, res) {
-    console.log('new breakfast food to store: ', req.body.breakfastInput);
-
+router.put('/', function (req, res) {
+    console.log('new userfood food to store: ', req.body.days);
+var foodToSave=req.body.days;
     // use model/constructor to make a Mongoose Object
-    var breakfastToSaveToTheCollection = new Breakfast(req.body);
+    // var userfoodToSaveToTheCollection = new User(req.body);
 
-    // insert into our collection
-    breakfastToSaveToTheCollection.save(function (err, data) {
-        console.log('saved to the collection: ', data);
-        if (err) {
-            console.log('save error: ', err);
+if (req.isAuthenticated()) {
+    console.log('works here 1')
+        var userId = req.user.id;
+        // insert into our collection
+        User.findByIdAndUpdate(
+            { _id: userId },
+            { $push: { food : foodToSave } },
 
-            res.sendStatus(500);
-        } else {
-            res.sendStatus(201);
-        }
 
-    });
+            function (err, data) {
+                console.log('saved to the collection: ', data);
+                if (err) {
+                    console.log('save error: ', err);
+
+                    res.sendStatus(500);
+                } else {
+                    console.log('works here 2',foodToSave);
+                    res.sendStatus(201);
+                }
+
+            });
+    }
 });
 router.put('/:id', function (req, res) {
     var breakfastfoodId = req.params.id;

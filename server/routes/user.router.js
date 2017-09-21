@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var User = require('../models/user.js');
 
 // Handles Ajax request for user information if user is authenticated
 router.get('/', function(req, res) {
@@ -29,6 +30,9 @@ router.get('/logout', function(req, res) {
   req.logOut();
   res.sendStatus(200);
 });
+
+//stuff that isnt authentification
+
 
 
 module.exports = router;
