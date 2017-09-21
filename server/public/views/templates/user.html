@@ -9,9 +9,10 @@
         breakfast
         <ul>
             <li ng-repeat="food in day.breakfast">{{food}}</li>
-            <li><input ng-model="userfood" id="Input" type="text" placeholder="Whats For {{foodtype.foodtype}}?" /><button class="btn btn-primary"
-                ng-click="day.breakfast.push(userfood); uc.saveUserDays(uc.userObject.details.days)">ADD!</button></li>
-            <!-- changed day to food  -->
+             <li><input ng-model="userfood" id="Input" type="text" placeholder="Whats For {{foodtype.foodtype}}?" /><button class="btn btn-primary"
+                ng-click="day.breakfast.push(userfood); uc.saveUserDays(uc.userObject.details.days)">ADD!</button></li> 
+        <!-- <li><input ng-model="userfood" id="Input" type="text" placeholder="Whats For {{foodtype.foodtype}}?" /><button class="btn btn-primary"
+                ng-click="day.breakfast.push(userfood); uc.findByIdAndUpdate()">ADD!</button></li> -->
 
       
         </ul>

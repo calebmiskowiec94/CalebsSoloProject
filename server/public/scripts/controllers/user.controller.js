@@ -17,7 +17,7 @@ myApp.controller('UserController', ['UserService', 'CalendarService','UserfoodSe
   console.log('self is',vm)
   console.log('vm.foodtypes is',vm.foodtypes);
   console.log ('user object...', vm.userObject)
-     
+  //uc.userObject.details
 
 
   vm.addMeal = function () {
@@ -27,18 +27,19 @@ myApp.controller('UserController', ['UserService', 'CalendarService','UserfoodSe
     UserfoodService.addUserfood(vm.newMeal);
   }
 
-  vm.updateBreakfastFood = function (currentBreakfastFood) {
-    console.log('hitttt it', "id is ", currentBreakfastFood);
+  // vm.updateBreakfastFood = function (currentBreakfastFood) {
+  //   console.log('hitttt it', "id is ", currentBreakfastFood);
 
-    // currentBreakfastFood.breakfastfood = '';
-    BreakfastService.updateBreakfastFood(currentBreakfastFood);
-  }
-  vm.deleteBreakfastFood = function (breakfastFoodId) {
-    console.log('it hit  itttt');
-    BreakfastService.deleteBreakfastFood(breakfastFoodId);
-  }
+  //   // currentBreakfastFood.breakfastfood = '';
+  //   BreakfastService.updateBreakfastFood(currentBreakfastFood);
+  // }
+  // vm.deleteBreakfastFood = function (breakfastFoodId) {
+  //   console.log('it hit  itttt');
+  //   BreakfastService.deleteBreakfastFood(breakfastFoodId);
+  // }
   vm.saveUserDays = function (userDays){
 console.log(userDays);
+UserfoodService.addUserfood(userDays);
   }
 
 
