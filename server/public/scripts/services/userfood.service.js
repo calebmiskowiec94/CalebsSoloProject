@@ -7,7 +7,6 @@ myApp.service('UserfoodService', ['$http', function ($http) {
         $http.get('/userfood').then(function (response) {
             console.log(response);
             self.userfood.list = response.data;
-            console.log('get response: ', self.gottenUserfood);
         });
     };
     // self.getUserfood();
@@ -23,8 +22,7 @@ self.addUserfood = function (userfood) {
     $http.put('/userfood', userfood).then(function (response) {
         console.log('service post response: ', response);
          self.getUserfood();
-         console.log('this good stuff',self.getUserfood);
-         console.log('current userfood',userfood);
+      
     });
 };
  

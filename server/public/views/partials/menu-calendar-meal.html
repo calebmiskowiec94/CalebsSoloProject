@@ -1,39 +1,108 @@
-<div ng-repeat="foodtype in uc.foodtypes.list">
-<div class="ac-sub">
-     <input class="ac-input" id="ac-{{foodtype._id}}+{{day._id}}" name="ac-{{foodtype._id}}+{{day._id}}" type="checkbox" />
-    <label class="ac-label" for="ac-{{foodtype._id}}+{{day._id}}">{{foodtype.foodtype}}</label>
-    <article class="ac-sub-text">
-        <div>
 
-            <form>
-                <div id="ac-{{foodtype._id}}+{{day._id}}" ng-repeat="meal in uc.meals.list" style="padding: 5px 5px 5px 5px;">
-                    {{meal.breakfastfood}}
-                     <button ng-click="editInput = ! editInput" class="btn btn-default">
+<!-- <div ng-repeat="foodtype in uc.foodtypes.list">  -->
+     <div > 
+    <div class="ac-sub">
+        <input class="ac-input" id="ac-{{foodtype._id}}+{{day.dayofweek}}" name="ac-{{foodtype._id}}+{{day.dayofweek}}" type="checkbox" />
+        <!-- <label class="ac-label" for="ac-{{foodtype._id}}+{{day.dayofweek}}">{{foodtype.foodtype}}</label> -->
+        <label class="ac-label" for="ac-{{foodtype._id}}+{{day.dayofweek}}">Breakfast</label>
+        <article class="ac-sub-text">
+            <div>
+
+                <form>
+                    <div ng-repeat="food in day.breakfast" style="padding: 5px 5px 5px 5px;">
+                        {{ food }}
+                        <button ng-click="editInput = ! editInput" class="btn btn-default">
                           Edit
                         </button>
-                    <input ng-model="meal.breakfastfood" ng-show="editInput" type="text" placeholder="edit">
-                    <button ng-click="uc.updateBreakfastFood(meal)" ng-show="editInput" class="wow">
+                        <input ng-model="food" ng-show="editInput" type="text" >
+                        <button ng-click="day.breakfast.push(day.breakfast); uc.saveUserDays(uc.userObject.details.days)" ng-show="editInput" class="wow">
                             Submit
                         </button> 
-                    <button ng-click="uc.deleteBreakfastFood(meal._id)">Delete</button>
-                </div>
-            </form>
-            <!-- <input ng-show="editInput" type="text" placeholder="edit"> -->
-            <!-- "vm.updateBreakFastFood(currentBreakfastFood)" -->
-            <!-- <p>Tofu Scramble <button>EDIT</button> <button>Delete</button></p>
+                        
+                        <button ng-click="uc.deleteBreakfastFood(meal._id)">Delete</button>
+                    </div>
+                </form>
+                <!-- <input ng-show="editInput" type="text" placeholder="edit"> -->
+                <!-- "vm.updateBreakFastFood(currentBreakfastFood)" -->
+                <!-- <p>Tofu Scramble <button>EDIT</button> <button>Delete</button></p>
         <p>2 Oranges <button>EDIT</button> <button>Delete</button></p>
         <p>Toast <button>EDIT</button> <button>Delete</button></p> -->
 
-<!-- ADD BUTTON FUNCTION INPUT STUFF -->
+                <p><input ng-model="userfood" id="bInput" type="text" placeholder="Whats For {{foodtype.foodtype}}?"
+                    /><button class="btn btn-primary" ng-click="day.breakfast.push(userfood); uc.saveUserDays(uc.userObject.details.days)">ADD!</button></p>
+            </div>
+        </article>
+    </div>
+</div>
+<div>
+    <div class="ac-sub">
+        <input class="ac-input" id="ac-{{foodtype._id}}+{{day.dayofweek}}+1" name="ac-{{foodtype._id}}+{{day.dayofweek}}+1" type="checkbox"
+        />
+        <!-- <label class="ac-label" for="ac-{{foodtype._id}}+{{day.dayofweek}}">{{foodtype.foodtype}}</label> -->
+        <label class="ac-label" for="ac-{{foodtype._id}}+{{day.dayofweek}}+1">Lunch</label>
+        <article class="ac-sub-text">
+            <div>
 
-            <p><input ng-model="uc.newMeal.breakfastfood" id="breakfastInput" type="text" placeholder="Whats For {{foodtype.foodtype}}?"
-                /><button class="btn btn-primary" ng-click="uc.addMeal()">ADD!</button></p>
+                <form>
+                    <div ng-repeat="food in day.lunch" style="padding: 5px 5px 5px 5px;">
+                        {{ food }}
+                        <button ng-click="editInput = ! editInput" class="btn btn-default">
+                          Edit
+                        </button>
+                        <input ng-model="food" ng-show="editInput" type="text">
+                        <button ng-click="day.lunch.push(day.breakfast); uc.saveUserDays(uc.userObject.details.days)" ng-show="editInput" class="wow">
+                            Submit
+                        </button>
 
-<!--END OF ADD BUTTON FUNCTION INPUT STUFF -->
+                        <button ng-click="uc.deleteBreakfastFood(meal._id)">Delete</button>
+                    </div>
+                </form>
+                <!-- <input ng-show="editInput" type="text" placeholder="edit"> -->
+                <!-- "vm.updateBreakFastFood(currentBreakfastFood)" -->
+                <!-- <p>Tofu Scramble <button>EDIT</button> <button>Delete</button></p>
+        <p>2 Oranges <button>EDIT</button> <button>Delete</button></p>
+        <p>Toast <button>EDIT</button> <button>Delete</button></p> -->
 
+                <p><input ng-model="userfood" id="lInput" type="text" placeholder="Whats For {{foodtype.foodtype}}?"
+                    /><button class="btn btn-primary" ng-click="day.lunch.push(userfood); uc.saveUserDays(uc.userObject.details.days)">ADD!</button></p>
+            </div>
+        </article>
+    </div>
+</div>
+<div>
+    <div class="ac-sub">
+        <input class="ac-input" id="ac-{{foodtype._id}}+{{day.dayofweek}}+2" name="ac-{{foodtype._id}}+{{day.dayofweek}}+2" type="checkbox"
+        />
+        <!-- <label class="ac-label" for="ac-{{foodtype._id}}+{{day.dayofweek}}">{{foodtype.foodtype}}</label> -->
+        <label class="ac-label" for="ac-{{foodtype._id}}+{{day.dayofweek}}+2">Dinner</label>
+        <article class="ac-sub-text">
+            <div>
 
-        </div>
-    </article>
-</div></div>
+                <form>
+                    <div ng-repeat="food in day.dinner" style="padding: 5px 5px 5px 5px;">
+                        {{ food }}
+                        <button ng-click="editInput = ! editInput" class="btn btn-default">
+                          Edit
+                        </button>
+                        <input ng-model="food" ng-show="editInput" type="text">
+                        <button ng-click="day.dinner.push(day.breakfast); uc.saveUserDays(uc.userObject.details.days)" ng-show="editInput" class="wow">
+                            Submit
+                        </button>
+
+                        <button ng-click="uc.deleteBreakfastFood(meal._id)">Delete</button>
+                    </div>
+                </form>
+                <!-- <input ng-show="editInput" type="text" placeholder="edit"> -->
+                <!-- "vm.updateBreakFastFood(currentBreakfastFood)" -->
+                <!-- <p>Tofu Scramble <button>EDIT</button> <button>Delete</button></p>
+        <p>2 Oranges <button>EDIT</button> <button>Delete</button></p>
+        <p>Toast <button>EDIT</button> <button>Delete</button></p> -->
+
+                <p><input ng-model="userfood" id="dInput" type="text" placeholder="Whats For {{foodtype.foodtype}}?"
+                    /><button class="btn btn-primary" ng-click="day.dinner.push(userfood); uc.saveUserDays(uc.userObject.details.days)">ADD!</button></p>
+            </div>
+        </article>
+    </div>
+</div>
 
 

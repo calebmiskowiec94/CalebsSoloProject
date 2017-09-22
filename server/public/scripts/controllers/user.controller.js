@@ -2,13 +2,14 @@ myApp.controller('UserController', ['UserService', 'CalendarService', 'UserfoodS
   console.log('UserController created');
   var vm = this;
   vm.userObject = UserService.userObject;
-  vm.UserfoodService = UserfoodService;
+  // vm.UserfoodService = UserfoodService;
   //CalendarService.getCalendar();
   //vm.userService = UserService;
   //vm.userObject = UserService.userObject;
   // vm.calendarService = CalendarService;
   vm.dates = CalendarService.dates;
   vm.foodtypes = FoodtypeService.foodtypes;
+  foodtypeFixMyProblemBaby = vm.foodtypes
   // vm.meals = BreakfastService.breakfast;
   vm.newMeal = {};
   UserfoodService.getUserfood();
@@ -27,13 +28,13 @@ myApp.controller('UserController', ['UserService', 'CalendarService', 'UserfoodS
     UserfoodService.addUserfood(vm.newMeal);
   }
 
-  vm.updateUserfood = function (id, userfood) {
-    console.log('hitttt it', "id is ", userfood);
-    console.log('id',id);
+  // vm.updateUserfood = function (id, userfood) {
+  //   console.log('hitttt it', "id is ", userfood);
+  //   console.log('id',id);
 
-    userfood = userfood.days;
-    UserfoodService.addUserfood(userfood);
-  }
+  //   userfood = userfood.days;
+  //   UserfoodService.addUserfood(userfood);
+  // }
   // vm.deleteBreakfastFood = function (breakfastFoodId) {
   //   console.log('it hit  itttt');
   //   BreakfastService.deleteBreakfastFood(breakfastFoodId);
