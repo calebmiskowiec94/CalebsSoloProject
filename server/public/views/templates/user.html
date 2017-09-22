@@ -11,7 +11,7 @@
                           Edit
                         </button>
                 <input ng-model="food" ng-show="editInput" type="text" placeholder="edit">
-                <button ng-click="uc.updateUserfood(day.days, food.food)" ng-show="editInput" class="wow">
+                <button ng-click="uc.saveUserDays(uc.userObject.details.days)" ng-show="editInput" class="wow">
                             Submit
                         </button></li>
             <li><input ng-model="userfood" id="Input" type="text" placeholder="Whats For {{foodtype.foodtype}}?" /><button class="btn btn-primary"
