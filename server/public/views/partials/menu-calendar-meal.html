@@ -8,13 +8,13 @@
             <form>
                 <div id="ac-{{foodtype._id}}+{{day._id}}" ng-repeat="meal in uc.meals.list" style="padding: 5px 5px 5px 5px;">
                     {{meal.breakfastfood}}
-                    <button ng-click="editInput = ! editInput" class="btn btn-default">
+                     <button ng-click="editInput = ! editInput" class="btn btn-default">
                           Edit
                         </button>
                     <input ng-model="meal.breakfastfood" ng-show="editInput" type="text" placeholder="edit">
                     <button ng-click="uc.updateBreakfastFood(meal)" ng-show="editInput" class="wow">
                             Submit
-                        </button>
+                        </button> 
                     <button ng-click="uc.deleteBreakfastFood(meal._id)">Delete</button>
                 </div>
             </form>

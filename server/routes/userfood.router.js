@@ -48,6 +48,25 @@ if (req.isAuthenticated()) {
             });
     }
 });
+// router.put('/:id', function (req, res) {
+//     var userfoodtosave=req.body;
+//     var userfoodId = req.params.id;
+
+//     console.log('new userfood:', req.body.days);
+//     User.findByIdAndUpdate(
+//         { _id: userfoodId },
+//         { $set: { days: req.body.days } },
+//         function (err, data) {
+//             if (err) {
+//                 console.log('update error: ', err);
+
+//                 res.sendStatus(500);
+//             } else {
+//                 res.sendStatus(200);
+//             }
+//         }
+//     )
+// });
 // router.post('/', function (req, res) {
 //     console.log('new person to store: ', req.body);
 
