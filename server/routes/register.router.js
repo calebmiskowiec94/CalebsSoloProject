@@ -20,7 +20,51 @@ router.post('/', function(req, res, next) {
   */
     var userToSave = {
       username : req.body.username,
-      password : req.body.password
+      password : req.body.password,
+      days: [
+        {
+          "dayofweek": "Monday",
+          "breakfast": [],
+          "lunch": [],
+          "dinner": []
+        },
+        {
+          "dayofweek": "Tuesday",
+          "breakfast": [],
+          "lunch": [],
+          "dinner": []
+        },
+        {
+          "dayofweek": "Wednesday",
+          "breakfast": [],
+          "lunch": [],
+          "dinner": []
+        },
+        {
+          "dayofweek": "Thursday",
+          "breakfast": [],
+          "lunch": [],
+          "dinner": []
+        },
+        {
+          "dayofweek": "Friday",
+          "breakfast": [],
+          "lunch": [],
+          "dinner": []
+        },
+        {
+          "dayofweek": "Saturday",
+          "breakfast": [],
+          "lunch": [],
+          "dinner": []
+        },
+        {
+          "dayofweek": "Sunday",
+          "breakfast": [],
+          "lunch": [],
+          "dinner": []
+        }
+      ]
     };
 
 
