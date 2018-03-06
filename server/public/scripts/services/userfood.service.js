@@ -8,10 +8,20 @@ myApp.service('UserfoodService', ['$http', function ($http) {
         console.log('going to send this object to the server: ', userfood);
         $http.put('/userfood', userfood).then(function (response) {
             console.log('service post response: ', response);
-            self.getUserfood();
+           
         
         });
     };
+
+    self.deleteUserfood = function (userfood) {
+        console.log('going to send this deleted object to the server: ', userfood);
+        $http.put('/userfood/delete', userfood).then(function (response) {
+            console.log('service post response: ', response);
+
+
+        });
+    };
+    
  
 }]);
 

@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute']);
+console.log('1');
 
 /// Routes ///
 myApp.config(function($routeProvider, $locationProvider) {
@@ -23,8 +24,8 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
-    .when('/info', {
-      templateUrl: '/views/templates/info.html',
+    .when('/veganNutrition', {
+      templateUrl: '/views/templates/veganNutrition.html',
       controller: 'InfoController',
       resolve: {
         getuser : function(UserService){
@@ -32,7 +33,37 @@ myApp.config(function($routeProvider, $locationProvider) {
         }
       }
     })
+    .when('/veganResources', {
+      templateUrl: '/views/templates/veganResources.html',
+      controller: 'InfoController',
+      resolve: {
+        getuser: function (UserService) {
+          return UserService.getuser();
+          
+        }
+      }
+    })
     .otherwise({
       redirectTo: 'home'
     });
 });
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}

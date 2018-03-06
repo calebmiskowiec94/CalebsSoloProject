@@ -319,4 +319,92 @@ h3 {
 
 .ac-sub-text {
   padding: 0 1em 0 2em;
-}   
+}  
+
+
+/* Style the tab */
+footer{
+  position:fixed;bottom:0;
+}
+.tab {
+text-align: center;
+}
+footer.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+   background-color: #333333;
+    width: 100%;
+    
+       /* width: 45em;  */
+  /* margin: 10px auto; */
+}
+
+/* Style the buttons inside the tab */
+footer.tab button {
+  
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    background-color: #333333;
+    font-family: 'Kaushan Script', cursive;
+    float:left;
+     /* display: block;  */
+    
+}
+
+/* Change background color of buttons on hover */
+footer.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+footer.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display:none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    display:inline-block; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 175px;
+    overflow:hidden;
+    z-index: -1;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: -1;
+}
+
+/* Add some padding inside the card container */
+.cardContainer {
+    padding: 2px 16px;
+    display:inline-block;
+    z-index: -1;
+}
+
+.cardImage{
+  filter: grayscale(50%);
+  filter: blur(50%);
+  z-index: -1;
+  float: left;
+  /* margin-right: 500px; */
+   margin-left: 300px; 
+}
+#footerButtons{
+  margin-left: 250px;
+  z-index: 100;
+}

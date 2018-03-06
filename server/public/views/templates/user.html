@@ -48,12 +48,20 @@
                                             <button ng-click="editInput = ! editInput" class="btn btn-default">
                                                 Edit
                                             </button>
+                                            <button ng-click="uc.deleteUserDays(uc.userObject.details.days)" class="wow">
+                                                Delete
+                                            </button>
                                         </span>
+
+                                           
+
+                                        
                                         <input class="bfastInput" ng-model="day.breakfast[$index]" type="text" ng-show="editInput">
                                         <button ng-click="uc.saveUserDays(uc.userObject.details.days)" ng-show="editInput" class="wow">
                                             Submit
                                         </button>
                                         <!-- <button ng-click="uc.deleteBreakfastFood(meal._id)"></button> -->
+
                                     </div>
                                 </form>
                                 <p>
@@ -95,7 +103,7 @@
 
                                 <p>
                                     <input ng-model="userfood" id="lInput" type="text" placeholder="Whats For Lunch?" />
-                                    <button class="btn btn-primary" ng-click="day.lunch.push(userfood); uc.saveUserDays(uc.userObject.details.days);userfood = ''">ADD!</button>
+                                    <button class="btn btn-primary" ng-click="day.lunch.push(userfood); uc.saveUserDays(uc.userObject.details.days); userfood = ''">ADD!</button>
                                 </p>
                             </div>
                         </article>

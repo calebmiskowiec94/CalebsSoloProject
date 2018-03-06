@@ -48,6 +48,62 @@ if (req.isAuthenticated()) {
             });
     }
 });
+
+
+
+
+
+
+
+
+
+
+router.put('/delete', function (req, res) {
+    console.log('deleted userfood update to store: ', req.body.days);
+    var foodToSave = req.body;
+    console.log(req.body + "jkl;")
+    // use model/constructor to make a Mongoose Objects
+    // var userfoodToSaveToTheCollection = new User(req.body);
+
+    if (req.isAuthenticated()) {
+        console.log('works here 1')
+        var userId = req.user.id;
+        var deleteBreakfastMonday = {
+            //var id = req.user.days.foreignKeyMeal  
+            
+            days: [
+                {
+                    "dayofweek": "Monday",
+                    "breakfast": [],
+                    "lunch": [req.user.days[0].lunch
+                    ],
+                    "dinner": [req.user.days[0].dinner
+                    ],
+                },
+                
+            ]
+        };
+        // insert into our collection
+        User.findByIdAndUpdate(
+            { _id: userId },
+            {
+                $set: deleteBreakfastMonday },
+
+
+            function (err, data) {
+                console.log('saved to the collection: ', data);
+                if (err) {
+                    console.log('save error: ', err);
+
+                    res.sendStatus(500);
+                } else {
+
+                    res.sendStatus(201);
+                }
+
+            });
+    }
+});
 // router.put('/:id', function (req, res) {
 //     var userfoodtosave=req.body;
 //     var userfoodId = req.params.id;
